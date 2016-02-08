@@ -48,7 +48,7 @@ favoriteThings.book = "50 Shades of Gray";
 
 
 
-/*Create an empty Object called backPack. Now, create a variable called 'item'
+/*Create an empty Object called `backPack`. Now, create a variable called 'item'
 and set it equal to the string 'firstPocket'. Using bracket notation,
 add a 'firstPocket' key (or property) to backPack, using 'item'.
 Set the value of that key to 'chapstick'.
@@ -58,17 +58,23 @@ Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
   //Code here
-var backPack = {
-  var item = "firstPocket";
-  firstPocket: "chapstick"
-}
+var backPack = {};
+var item = 'firstPocket';
+backPack.firstPocket = 'chapstick';
+backPack.color = 'red';
+
 //After you do the above, alert your entire backPack object.
 
   //Code here
 alert(backPack);
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
-Instead, console.log your whole backPack object and then check out the console. */
+Instead, console.log your whmethodCollection.alertHello = function() {
+  alert('hello');
+}
+methodCollection.logHello = function() {
+  console.log('hello');
+}ole backPack object and then check out the console. */
 
   //Code here
 console.log(backPack);
@@ -86,6 +92,7 @@ console.log(backPack);
 var alsoMe = {
   name: "Tanner Andersen",
   age: 19,
+  height: "6 Foot 1 Inches",
   gender: 'Male',
   married: false,
   eyeColor: 'blue',
@@ -219,17 +226,23 @@ user2.sayName();
 //Create an empty object called methodCollection.
 
   //Code Here
-
+var methodCollection = {};
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
-
+  methodCollection.alertHello = function() {
+    alert('hello');
+  }
+  methodCollection.logHello = function() {
+    console.log('hello');
+  }
 //Now call your alertHello and logHello methods.
 
   //Code Here
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 //NEXT PROBLEM
@@ -239,7 +252,14 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
-
+function MakePerson(name, birthday, ssn) {
+  var newPerson = {
+    'name': name,
+    'birthday': birthday,
+    'ssn': ssn
+  }
+  return newPerson;
+}
 
 
 //NEXT PROBLEM
@@ -249,7 +269,15 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called MakeCard which takes in all the data it needs to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 
   //Code Here
-
+function MakeCard(cardNumber, cardExp, cardSec, cardMake) {
+  var newCard = {
+    'cardNumber': cardNumber,
+    'cardExp': cardExp,
+    'cardSec': cardSec,
+    'cardMake': cardMake
+  }
+  return newCard;
+}
 
 
 //NEXT PROBLEM
@@ -262,3 +290,14 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
+
+function bindCard(person, card) {
+  var personCard = {};
+  for (var p in person) {
+    bindCard[p] = person[p];
+  }
+  for (var x in card) {
+    bindCard[x] = card[x];
+  }
+  return personCard;
+}
